@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "444986395251",
+    "project_id": "pungut-6b824",
+    "storage_bucket": "pungut-6b824.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444986395251:android:2c763950a1a7caeb31f806",
+        "android_client_info": {
+          "package_name": "com.example.jobportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444986395251-igjlr656f6oagkmt5imffp4v2uslmon4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmke7oyEwDg14-UpA5Nvn2CG1SH2Gc1sM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "444986395251-igjlr656f6oagkmt5imffp4v2uslmon4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

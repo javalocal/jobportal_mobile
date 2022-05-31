@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
-
-class history extends StatefulWidget {
-  history({Key? key}) : super(key: key);
-
-  @override
-  State<history> createState() => _historyState();
-}
-
-class _historyState extends State<history> {
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-     body: MenuItemsList()
-   );
-  }
-}
+import 'package:google_fonts/google_fonts.dart';
 
 
 class MenuItemsList extends StatelessWidget {
@@ -69,6 +54,10 @@ class MenuItem extends StatelessWidget {
                           horizontal: 8.0, vertical: 4.0),
                       child: Row(
                         children: <Widget>[
+                          Icon(
+                            Icons.star,
+                            size: 15.0,
+                          ),
                           Text('PT. Pungut')
                         ],
                       ),
@@ -78,13 +67,13 @@ class MenuItem extends StatelessWidget {
                     height: 8.0,
                   ),
                   Text(
-                    'Waiting list',
+                    'Marketing',
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                   Container(
                       width: 200.0,
                       child: Text(
-                        '23 Januari 2023',
+                        'Last education S1 teknik sipil, pengalaman 1 tahun',
                         style: TextStyle(color: Colors.grey),
                       )),
                 ],

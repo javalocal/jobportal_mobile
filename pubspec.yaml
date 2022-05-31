@@ -38,6 +38,10 @@ dependencies:
   flutter_swiper: ^1.1.6
   polygon_clipper: ^1.0.2
   form_field_validator: ^1.1.0
+  mongo_dart: ^0.4.4
+  cloud_firestore: ^0.15.0
+  firebase_core: ^0.6.0
+  google_fonts: ^1.1.1
 
 dev_dependencies:
   flutter_test:

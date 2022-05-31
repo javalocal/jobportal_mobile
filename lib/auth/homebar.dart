@@ -1,13 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:jobportal/auth/homebar.dart';
 import 'package:jobportal/auth/login.dart';
+import 'package:jobportal/auth/regiscom.dart';
 import 'package:jobportal/auth/register.dart';
 import 'package:jobportal/welcome/constrain.dart';
 
-class welcome extends StatelessWidget {
-  const welcome({Key? key}) : super(key: key);
+class welcomeregis extends StatelessWidget {
+  const welcomeregis({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class welcome extends StatelessWidget {
                       onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => login(),
+                          builder: (context) => Register(),
                         ),
                       )
                       ,
@@ -38,7 +38,7 @@ class welcome extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)))
                       ),
-                      child: Text("Sign In"),
+                      child: Text("Register Job Applicant"),
                       
                     ),
                   ),
@@ -51,7 +51,7 @@ class welcome extends StatelessWidget {
                         onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => welcomeregis(),
+                              builder: (context) => Registerco(),
                             )),
                         style: TextButton.styleFrom(
                           elevation: 0,
@@ -61,7 +61,7 @@ class welcome extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(20))
                           ),
                         ),
-                        child: Text("Sign Up", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                        child: Text("Register Company", style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
                       ),
                     ),
                   ),

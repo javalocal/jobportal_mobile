@@ -1,28 +1,28 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:jobportal/auth/regiscom.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:jobportal/appbar/company_home.dart';
 import 'package:jobportal/database/account.dart';
+import 'package:jobportal/database/job.dart';
 import 'package:jobportal/welcome/constrain.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:jobportal/auth/login.dart';
 import 'package:mongo_dart/mongo_dart.dart' as M;
 
-class Register extends StatefulWidget {
-  Register({Key? key}) : super(key: key);
+class addjob extends StatefulWidget {
+  addjob({Key? key}) : super(key: key);
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<addjob> createState() => _addjob();
 }
 
-class _RegisterState extends State<Register> {
+class _addjob extends State<addjob> {
   final _formKey = GlobalKey<FormState>();
-  final emailControl = TextEditingController();
-  final passControl = TextEditingController();
-  final nameControl = TextEditingController();
-  final alamatControl = TextEditingController();
-  final pendidikanControl = TextEditingController();
+  final divisi = TextEditingController();
+  final last_edu = TextEditingController();
+  final pengalam = TextEditingController();
   @override
   Widget build(BuildContext context) {
     // FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -40,55 +40,35 @@ class _RegisterState extends State<Register> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Register Job Applicant",
+                      "Add job",
                       style: Theme.of(context)
                           .textTheme
                           .headline5!
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
-                    Row(
-                      children: [
-                        Text("Already have an account?"),
-                        TextButton(
-                          onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => login(),
-                              )),
-                          child: Text(
-                            "Sign In",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
                     const SizedBox(height: defaultPadding * 2),
-                    TextFormField(
-                        controller: nameControl,
-                        decoration: InputDecoration(labelText: 'Name'),
-                      ),
-                       TextFormField(
-                        controller: pendidikanControl,
-                        decoration: InputDecoration(labelText: 'Last Education'),
+                   TextFormField(
+                        
+                        controller: divisi,
+                        decoration: InputDecoration(labelText: 'Divisi'),
                       ),
                         TextFormField(
-                        controller: alamatControl,
-                        decoration: InputDecoration(labelText: 'Alamat'),
-                      ),
-                    TextFormField(
-                        controller: emailControl,
-                        decoration: InputDecoration(labelText: 'Email'),
+                      
+                        controller: last_edu,
+                        decoration: InputDecoration(labelText: 'Last education'),
                       ),
                         TextFormField(
-                        controller: passControl,
-                        decoration: InputDecoration(labelText: 'Password'),
+                       
+                        controller: pengalam,
+                        decoration: InputDecoration(labelText: 'pengalaman'),
                       ),
+                    
                     const SizedBox(height: defaultPadding * 2),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                      adduser(nameControl.text, pendidikanControl.text, alamatControl.text, emailControl.text, passControl.text);
+                      addjob_(divisi.text, last_edu.text, pengalam.text);
                       //  user.add({
                       //    'name':nameControl.text,
                       //    'las_edu': pendidikanControl.text,
@@ -96,19 +76,17 @@ class _RegisterState extends State<Register> {
                       //    'email': emailControl.text,
                       //    'password': passControl.text
                       //  });
-                       nameControl.text='';
-                      pendidikanControl.text='';
-                      alamatControl.text='';
-                      emailControl.text='';
-                      passControl.text='';
+                    divisi.text='';
+                  last_edu.text='';
+                  pengalam.text='';
                        Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => login(),
+                              builder: (context) => MainPage(),
                             ),
                           );
                         },
-                        child: Text("Sign Up"),
+                        child: Text("Upload"),
                       ),
                     ),
                   ],

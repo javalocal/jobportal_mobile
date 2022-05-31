@@ -1,12 +1,16 @@
 // @dart=2.9
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:jobportal/appbar/appbarfix.dart';
+import 'package:jobportal/appbar/company_home.dart';
 import 'package:jobportal/pages/home.dart';
 import 'package:jobportal/pages/joblist.dart';
 import 'package:jobportal/welcome/welcome.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -17,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:appbar_() 
+      home:welcome()
     );
   }
 }

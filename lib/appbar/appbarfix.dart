@@ -21,7 +21,7 @@ class _appbar_State extends State<appbar_> {
     search(),
     joblist(),
     history(),
-    account()
+    CardProfile()
   ];
 
   void _changeSelectedNavBar(int index) {
